@@ -1,0 +1,42 @@
+
+<h2>Directivas estructural de atributo</h2>
+<p>~ Estas nos permiten cambiar la apariencia o el comportamiento de los elementos de html (manipular el DOM) ~</p>
+
+<div class="row pt-4">
+    <!-- Un *ngIf y un *ngFor no pueden ir en el mismo elemento -->
+    <div class="col-6">
+        <h3>*ngIf</h3>
+        <hr>
+
+    <div *ngIf="visible" class="card text-white bg-danger mb-3" style="width: 95%;">
+        <!-- Depende de una variable o propiedad booleana -->
+            <div class="card-body">
+                <h5 class="card-title">Mensaje: {{frase.mensaje}} </h5>
+                <p class="card-text"
+                style="text-align: right;">Autor: <i>{{frase.autor}} </i></p>
+            </div>
+        </div>
+        <!-- Manejar evento con angular -->
+
+        <button (click)="visible = !visible;" 
+        class="btn btn-outline-dark btn-block"
+        style="width: 95%;">Ocultar/Mostrar</button>
+    </div>
+
+    <div class="col-6">
+        <h3>*ngFor</h3>
+        <hr>
+
+        <ul class="list-group">
+            <!-- *ngFor necesita un array para poder iterar y servir -->
+            <!-- EL primer valor del *ngFor se cocnoce como iterador el segundo sera la lista/array a iterar -->
+            <!-- Podemos agregar un valor extra como contador y para esto primero declaramos una variable (contador) y le asignamos el valor de index -->
+            <!-- index es el valor de cada vuelta del bucle (iteracion) -->
+            <div *ngFor="let personaje of personajes; let i = index"
+            style="height: 55px; margin-bottom: 15px;">
+                <li class="list-group-item disabled" aria-disabled="true"> {{i+1}}: {{personaje}} </li>
+            </div>
+
+        </ul>
+    </div>
+</div>

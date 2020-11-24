@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+footer {
+    bottom: 0;
+    width: 100%;
+    color: white;
+    margin-top: 25px;
+}
+
+footer a {
+    color: whitesmoke;
+    font-weight: bold;
+}
